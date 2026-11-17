@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse | Your Online Bookstore</title>
+    <meta name="description" content="Discover your next favorite book at BookVerse.">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================= HEADER & NAVIGATION ================= -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Book<span>Verse</span></a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bestsellers">Bestsellers</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Cart Button -->
+                <button id="cartBtn" class="icon-btn cart-btn" aria-label="Open Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </button>
+                
+                <!-- Hamburger Menu for Mobile -->
+                <button class="icon-btn hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= SHOPPING CART SIDEBAR (Slides from LEFT) ================= -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+    <aside id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="closeCartBtn" class="close-btn" aria-label="Close Cart">&times;</button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be injected here via JS -->
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="alert('Checkout simulated!')">Checkout</button>
+        </div>
+    </aside>
+
+    <main>
+        <!-- ================= HERO SECTION ================= -->
+        <section id="home" class="hero section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Unlock New Worlds with <span>Every Page</span></h1>
+                    <p>Explore our vast collection of books, from timeless classics to modern bestsellers. Your next great adventure is just a click away.</p>
+                    <a href="#bestsellers" class="btn btn-primary">Browse Collection</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80" alt="A library filled with books" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BESTSELLERS SECTION (Grid) ================= -->
+        <section id="bestsellers" class="bestsellers section">
+            <div class="container">
+                <h2 class="section-title">Bestselling Books</h2>
+                <p class="section-desc">Handpicked favorites loved by our readers.</p>
+                <div class="books-grid">
+                    
+                    <!-- Book 1 -->
+                    <article class="book-card">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80" alt="Atomic Habits Book Cover">
+                        <div class="book-info">
+                            <h3>Atomic Habits</h3>
+                            <p>James Clear</p>
+                            <span class="price">$15.99</span>
+                            <div class="card-actions">
+                                <button class="btn btn-outline view-details" data-title="Atomic Habits" data-author="James Clear" data-price="15.99" data-img="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=400&q=80" data-desc="A proven framework for improving every day by breaking down habits into small, manageable changes.">View Details</button>
+                                <button class="btn btn-primary add-to-cart" data-id="1" data-title="Atomic Habits" data-price="15.99">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 2 -->
+                    <article class="book-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" alt="The Midnight Library Book Cover">
+                        <div class="book-info">
+                            <h3>The Midnight Library</h3>
+                            <p>Matt Haig</p>
+                            <span class="price">$12.50</span>
+                            <div class="card-actions">
+                                <button class="btn btn-outline view-details" data-title="The Midnight Library" data-author="Matt Haig" data-price="12.50" data-img="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" data-desc="Between life and death there is a library, and within that library, the shelves go on forever.">View Details</button>
+                                <button class="btn btn-primary add-to-cart" data-id="2" data-title="The Midnight Library" data-price="12.50">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 3 -->
+                    <article class="book-card">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80" alt="Project Hail Mary Book Cover">
+                        <div class="book-info">
+                            <h3>Project Hail Mary</h3>
+                            <p>Andy Weir</p>
+                            <span class="price">$18.00</span>
+                            <div class="card-actions">
+                                <button class="btn btn-outline view-details" data-title="Project Hail Mary" data-author="Andy Weir" data-price="18.00" data-img="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=400&q=80" data-desc="A lone astronaut must save the earth from disaster in this incredible new science-based thriller.">View Details</button>
+                                <button class="btn btn-primary add-to-cart" data-id="3" data-title="Project Hail Mary" data-price="18.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GENRES SECTION (Interactive Dropdowns) ================= -->
+        <section id="genres" class="genres section">
+            <div class="container">
+                <h2 class="section-title">Explore by Genre</h2>
+                <p class="section-desc">Click to discover your next favorite category.</p>
+                
+                <div class="dropdown-container">
+                    <details class="custom-dropdown">
+                        <summary>Fiction</summary>
+                        <p>Immerse yourself in imaginative storytelling, from historical dramas to futuristic sci-fi worlds.</p>
+                    </details>
+                    <details class="custom-dropdown">
+                        <summary>Non-Fiction</summary>
+                        <p>Expand your knowledge with biographies, self-help guides, and historical accounts.</p>
+                    </details>
+                    <details class="custom-dropdown">
+                        <summary>Mystery & Thriller</summary>
+                        <p>Keep yourself on the edge of your seat with suspenseful plots and unexpected twists.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FEATURES SECTION (Flexbox) ================= -->
+        <section class="features section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="features-flex">
+                    <div class="feature-box">
+                        <i class="fas fa-truck-fast"></i>
+                        <h3>Fast Delivery</h3>
+                        <p>Get your books delivered to your doorstep within 2-3 business days.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Eco-Friendly</h3>
+                        <p>We use 100% recyclable packaging for all our shipments.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Our team is always here to help you with your orders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT FORM SECTION ================= -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have a question? Drop us a message!</p>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Sohaila Ahmadi">
+                        <small class="error-msg" id="nameError">Please enter your name.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="ahmadi@example.com">
+                        <small class="error-msg" id="emailError">Please enter a valid email address.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" style="resize: vertical;" rows="5" placeholder="How can we help you?"></textarea>
+                        <small class="error-msg" id="messageError">Please enter your message.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="success-msg" id="successMsg">Your message has been sent successfully!</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2024 BookVerse. All rights reserved for Sohaila Ahmadi.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL POPUP ================= -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImg" src="" alt="Book Cover" class="modal-img">
+            <h2 id="modalTitle">Book Title</h2>
+            <p id="modalAuthor"><strong>Author:</strong> Author Name</p>
+            <p id="modalDesc" class="modal-desc">Description goes here.</p>
+            <p id="modalPrice" class="modal-price">$0.00</p>
+            <button class="btn btn-primary w-100" id="modalAddBtn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
